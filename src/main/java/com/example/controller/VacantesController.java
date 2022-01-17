@@ -5,6 +5,7 @@ import com.example.service.ICategoriasService;
 import com.example.service.IVacantesService;
 import com.example.util.Utileria;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 
 @Controller
@@ -32,6 +32,7 @@ public class  VacantesController {
     private IVacantesService serviceVacantes;
 
     @Autowired
+    //@Qualifier("categoriasServiceJpa")
     private ICategoriasService serviceCategorias;
 
     @GetMapping("/index")
