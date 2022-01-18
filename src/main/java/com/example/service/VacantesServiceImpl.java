@@ -96,4 +96,9 @@ public class VacantesServiceImpl implements IVacantesService{
     public List<Vacante> buscarDestacadas() {
         return null;
     }
+
+    @Override
+    public void eliminar(Integer idVacante) {
+
+    }
 }
