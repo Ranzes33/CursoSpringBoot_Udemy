@@ -31,4 +31,8 @@ public class Vacante {
     @ManyToOne
     @JoinColumn(name="idCategoria")
     private Categoria categoria;
+
+    public void reset() {
+        this.imagen=null;
+    }
 }

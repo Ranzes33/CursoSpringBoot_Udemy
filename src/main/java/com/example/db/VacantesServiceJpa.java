@@ -5,6 +5,9 @@ import com.example.repository.VacantesRepository;
 import com.example.service.IVacantesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -42,5 +45,15 @@ public class VacantesServiceJpa implements IVacantesService {
     @Override
     public void eliminar(Integer idVacante) {
         vacantesRepo.deleteById(idVacante);
+    }
+
+    @Override
+    public List<Vacante> buscarByExample(Example<Vacante> example) {
+        return vacantesRepo.findAll(example);
+    }
+
+    @Override
+    public Page<Vacante> buscarTodas(Pageable page) {
+        return vacantesRepo.findAll(page);
     }
 }

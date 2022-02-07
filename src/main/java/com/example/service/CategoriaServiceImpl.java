@@ -1,6 +1,8 @@
 package com.example.service;
 
 import com.example.model.Categoria;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -74,6 +76,16 @@ public class CategoriaServiceImpl implements ICategoriasService{
                 return cat;
             }
         }
+        return null;
+    }
+
+    @Override
+    public void eliminar(Integer idCategoria) {
+
+    }
+
+    @Override
+    public Page<Categoria> buscarTodas(Pageable pageable) {
         return null;
     }
 }
